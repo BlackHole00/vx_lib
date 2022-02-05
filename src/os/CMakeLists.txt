@@ -1,4 +1,4 @@
-add_library(Os
+add_library(VxLibOs
     os.h
     key_state.h
     window_descriptor.h
@@ -11,10 +11,10 @@ add_library(Os
     context/sokol.h context/sokol.c
 )
 
-target_include_directories(Os PUBLIC ..)
+target_include_directories(VxLibOs PUBLIC ..)
 
-target_link_libraries(Os PRIVATE VxUtils)
-target_link_libraries(Os PRIVATE Sokol)
-target_link_libraries(Os PRIVATE glfw)
-target_link_libraries(Os PRIVATE Nuklear)
-target_link_libraries(Os PRIVATE Glad)
+target_link_libraries(VxLibOs PRIVATE VxUtils)
+target_link_libraries(VxLibOs PRIVATE Sokol)
+target_link_libraries(VxLibOs PRIVATE glfw)
+target_link_libraries(VxLibOs PRIVATE Nuklear)
+target_link_libraries(VxLibOs PRIVATE Glad)

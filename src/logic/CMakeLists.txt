@@ -1,4 +1,4 @@
-add_library(Logic
+add_library(VxLibLogic
     logic.h
     transform.h transform.c
     components/components.h
@@ -6,11 +6,11 @@ add_library(Logic
     components/rotation.h
 )
 
-target_include_directories(Logic PUBLIC ..)
+target_include_directories(VxLibLogic PUBLIC ..)
 
-target_link_libraries(Logic PRIVATE VxUtils)
-target_link_libraries(Logic PRIVATE Sokol)
-target_link_libraries(Logic PRIVATE glfw)
-target_link_libraries(Logic PRIVATE Nuklear)
-target_link_libraries(Logic PRIVATE Glad)
-target_link_libraries(Logic PRIVATE HandmadeMath)
+target_link_libraries(VxLibLogic PRIVATE VxUtils)
+target_link_libraries(VxLibLogic PRIVATE Sokol)
+target_link_libraries(VxLibLogic PRIVATE glfw)
+target_link_libraries(VxLibLogic PRIVATE Nuklear)
+target_link_libraries(VxLibLogic PRIVATE Glad)
+target_link_libraries(VxLibLogic PRIVATE HandmadeMath)
