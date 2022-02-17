@@ -30,7 +30,7 @@ typedef struct vx_State {
     /**
      * Called everytime the state is loaded.
      */
-    VX_CALLBACK(init, void, vx_UserStatePtr general_data, vx_UserStatePtr state_data, vx_WindowControl* window);
+    VX_CALLBACK(init, void, vx_UserStatePtr global_data, vx_UserStatePtr state_data, vx_WindowControl* window);
 
     /**
      * Called every frame. It should be used only for application logic.
@@ -41,17 +41,17 @@ typedef struct vx_State {
     /**
      * Called every frame. It should be used only for application drawing.
      */
-    VX_CALLBACK(draw, void, vx_UserStatePtr general_data, vx_UserStatePtr state_data);
+    VX_CALLBACK(draw, void, vx_UserStatePtr global_data, vx_UserStatePtr state_data);
 
     /**
      * Called every time the window is resized.
      */
-    VX_CALLBACK(resize, void, vx_UserStatePtr general_data, vx_UserStatePtr state_data, vx_WindowControl* window, u32 width, u32 height);
+    VX_CALLBACK(resize, void, vx_UserStatePtr global_data, vx_UserStatePtr state_data, vx_WindowControl* window, u32 width, u32 height);
 
     /**
      * Called every time there is a state change.
      */
-    VX_CALLBACK(close, void, vx_UserStatePtr general_data, vx_UserStatePtr state_data, vx_WindowControl* window);
+    VX_CALLBACK(close, void, vx_UserStatePtr global_data, vx_UserStatePtr state_data, vx_WindowControl* window);
 
     vx_StateUID prev_state;
 } vx_State;

@@ -14,7 +14,10 @@ static bool _is_glfw_initialized = false;
 static void _internal_glfw_resize(GLFWwindow* window, i32 width, i32 height) {
     vx_Window* w = glfwGetWindowUserPointer(window);
 
-    w->callback_functions.resize(w->user_state, w->glfw_window, width, height);
+    vx_windowcontrol_internal_update_window_size(w->utils_ptrs.window_control, width, height);
+    w->info_data.width = width;
+    w->info_data.height = height;
+    w->callback_functions.resize(w->user_state, w->utils_ptrs.window_control);
 }
 static void _internal_glfw_mouse_pos(GLFWwindow* window, f64 pos_x, f64 pos_y) {
     vx_Window* w = glfwGetWindowUserPointer(window);
@@ -148,6 +151,8 @@ void vx_window_run(vx_Window* self, vx_UserStatePtr user_state) {
     /*  Create helper structs for the user. */
     vx_WindowInputHelper input_helper = vx_windowinputhelper_new(self);
     vx_WindowControl control = vx_windowcontrol_new(self);
+    self->utils_ptrs.input_helper = &input_helper;
+    self->utils_ptrs.window_control = &control;
 
     /*  Time counting data  initialization. */
     f64 last_time       = glfwGetTime();
