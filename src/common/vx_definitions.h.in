@@ -1,0 +1,4 @@
+#cmakedefine VX_LIB_ENABLE_GLAD
+#cmakedefine VX_LIB_ENABLE_SOKOL
+#cmakedefine VX_LIB_ENABLE_WGPU
+#cmakedefine VX_LIB_ENABLE_NUKLEAR

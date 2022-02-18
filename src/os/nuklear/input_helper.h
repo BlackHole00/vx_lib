@@ -4,6 +4,10 @@
  * @date 22/12/2021
  */
 #pragma once
+
+#include <vx_definitions.h>
+#ifdef VX_LIB_ENABLE_NUKLEAR
+
 #include "../input_helper.h"
 
 #include <nuklear_args.h>
@@ -17,3 +21,5 @@
 * @return Returns if the mouse is hovering on any window
 */
 bool vx_inputhelper_update_nuklear_input(vx_WindowInputHelper* input, bool always_enabled);
+
+#endif /* VX_LIB_ENABLE_NUKLEAR */

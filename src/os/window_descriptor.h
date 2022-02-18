@@ -8,7 +8,16 @@
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
+#include <vx_definitions.h>
+#ifdef VX_LIB_ENABLE_SOKOL
 extern void vx_context_load_sokol(GLFWwindow* window);
+#define _VX_WINDOW_CONTEXT_LOAD_FN vx_context_load_sokol
+#elif VX_LIB_ENABLE_GLAD
+extern void vx_context_load_opengl(GLFWwindow* window);
+#define _VX_WINDOW_CONTEXT_LOAD_FN vx_context_load_opengl
+#else
+#define _VX_WINDOW_CONTEXT_LOAD_FN null
+#endif
 
 /**
  * @brief The window descriptor. It's used by the user to define how a window should behave and look.
@@ -46,7 +55,7 @@ VX_CREATE_DEFAULT(vx_WindowDescriptor,
     .swap_interval = 0,
     .transparent_framebuffer = false,
     .show_fps_in_title = true,
-    .backend_init_fn = vx_context_load_sokol,
+    .backend_init_fn = _VX_WINDOW_CONTEXT_LOAD_FN,
     .init       = NULL,
     .logic      = NULL,
     .draw       = NULL,

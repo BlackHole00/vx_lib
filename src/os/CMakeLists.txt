@@ -13,6 +13,7 @@ add_library(VxLibOs
 
 target_include_directories(VxLibOs PUBLIC ..)
 
+target_link_libraries(VxLibOs PRIVATE VxLibCommon)
 target_link_libraries(VxLibOs PRIVATE VxUtils)
 target_link_libraries(VxLibOs PRIVATE Sokol)
 target_link_libraries(VxLibOs PRIVATE glfw)

@@ -1,0 +1,42 @@
+add_library(VxLibCommon INTERFACE)
+
+if (NOT EXISTS VX_LIB_ENABLE_GLAD)
+    if (TARGET Glad)
+        option(VX_LIB_ENABLE_GLAD "Enable glad" ON)
+    else()
+        option(VX_LIB_ENABLE_GLAD "Enable glad" OFF)
+    endif()
+endif()
+
+if (NOT EXISTS VX_LIB_ENABLE_SOKOL)
+    if (TARGET Sokol)
+        option(VX_LIB_ENABLE_SOKOL "Enable sokol" ON)
+    else()
+        option(VX_LIB_ENABLE_SOKOL "Enable sokol" OFF)
+    endif()
+endif()
+
+if (NOT EXISTS VX_LIB_ENABLE_WGPU)
+    if (TARGET Wgpu)
+        option(VX_LIB_ENABLE_WGPU "Enable wgpu" ON)
+    else()
+        option(VX_LIB_ENABLE_WGPU "Enable wgpu" OFF)
+    endif()
+endif()
+
+if (NOT EXISTS VX_LIB_ENABLE_NUKLEAR)
+    if (TARGET Nuklear)
+        option(VX_LIB_ENABLE_NUKLEAR "Enable nuklear" ON)
+    else()
+        option(VX_LIB_ENABLE_NUKLEAR "Enable nuklear" OFF)
+    endif()
+endif()
+
+configure_file("vx_definitions.h.in" "vx_definitions.h")
+
+target_include_directories(VxLibCommon INTERFACE ${CMAKE_CURRENT_BINARY_DIR})
+
+unset(VX_LIB_ENABLE_GLAD CACHE)
+unset(VX_LIB_ENABLE_SOKOL CACHE)
+unset(VX_LIB_ENABLE_WGPU CACHE)
+unset(VX_LIB_ENABLE_NUKLEAR CACHE)

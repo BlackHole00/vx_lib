@@ -1,3 +1,6 @@
+#include <vx_definitions.h>
+#ifdef VX_LIB_ENABLE_NUKLEAR
+
 #include <sokol_args.h>
 #include <sokol_gfx.h>
 #include <nuklear_args.h>
@@ -63,3 +66,5 @@ bool vx_inputhelper_update_nuklear_input(vx_WindowInputHelper* input, bool alway
 
     return true;
 }
+
+#endif /* VX_LIB_ENABLE_NUKLEAR */

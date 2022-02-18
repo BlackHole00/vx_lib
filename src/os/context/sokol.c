@@ -1,3 +1,6 @@
+#include <vx_definitions.h>
+#ifdef VX_LIB_ENABLE_SOKOL
+
 #include "sokol.h"
 
 #include "opengl.h"
@@ -12,3 +15,5 @@ void vx_context_load_sokol(GLFWwindow* window) {
 
     sg_setup(&(sg_desc){ 0 });
 }
+
+#endif /* VX_LIB_ENABLE_SOKOL. */

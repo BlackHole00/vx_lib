@@ -1,3 +1,6 @@
+#include <vx_definitions.h>
+#ifdef VX_LIB_ENABLE_GLAD
+
 #include "opengl.h"
 
 #include <stdio.h>
@@ -22,3 +25,5 @@ void vx_context_load_opengl(GLFWwindow* window) {
     VX_ASSERT("Could not Initialize GLAD!", gladLoadGLLoader((GLADloadproc)glfwGetProcAddress));
     printf("Using opengl %s\n", glGetString(GL_VERSION));
 }
+
+#endif /* VX_LIB_ENABLE_GLAD */
