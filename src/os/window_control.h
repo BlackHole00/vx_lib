@@ -13,6 +13,11 @@
 typedef struct vx_WindowControl {
     GLFWwindow* glfw_window;
     bool* mouse_grabbed;
+
+    struct {
+        u32 width;
+        u32 height;
+    } window_size;
 } vx_WindowControl;
 
 /**
@@ -34,3 +39,11 @@ void vx_windowcontrol_set_mouse_grab(vx_WindowControl* window_control, bool grab
  * @param window_control The window control object.
  */
 void vx_windowcontrol_exit(vx_WindowControl* window_control);
+
+/**
+ * @brief [INTERNAL] Updates the window size information.
+ * @param window_control The window control object.
+ * @param new_width The new width.
+ * @param new_height The new height.
+ */
+void vx_windowcontrol_internal_update_window_size(vx_WindowControl* window_control, u32 new_width, u32 new_height);

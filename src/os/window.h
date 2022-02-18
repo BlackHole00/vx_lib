@@ -56,9 +56,14 @@ typedef struct {
         VX_CALLBACK(init, void, vx_UserStatePtr, vx_WindowControl*);
         VX_CALLBACK(logic, void, vx_UserStatePtr, vx_WindowControl*, vx_WindowInputHelper*);
         VX_CALLBACK(draw, void, vx_UserStatePtr);
-        VX_CALLBACK(resize, void, vx_UserStatePtr, vx_WindowControl*, u32, u32);
+        VX_CALLBACK(resize, void, vx_UserStatePtr, vx_WindowControl*);
         VX_CALLBACK(close, void, vx_UserStatePtr, vx_WindowControl*);
     } callback_functions;
+
+    struct {
+        void* window_control;
+        void* input_helper;
+    } utils_ptrs;
 
     vx_UserStatePtr user_state;
     GLFWwindow* glfw_window;
