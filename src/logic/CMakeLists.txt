@@ -9,8 +9,4 @@ add_library(VxLibLogic
 target_include_directories(VxLibLogic PUBLIC ..)
 
 target_link_libraries(VxLibLogic PRIVATE VxUtils)
-target_link_libraries(VxLibLogic PRIVATE Sokol)
-target_link_libraries(VxLibLogic PRIVATE glfw)
-target_link_libraries(VxLibLogic PRIVATE Nuklear)
-target_link_libraries(VxLibLogic PRIVATE Glad)
 target_link_libraries(VxLibLogic PRIVATE HandmadeMath)

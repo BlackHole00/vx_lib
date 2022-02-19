@@ -36,7 +36,7 @@ configure_file("vx_definitions.h.in" "vx_definitions.h")
 
 target_include_directories(VxLibCommon INTERFACE ${CMAKE_CURRENT_BINARY_DIR})
 
-unset(VX_LIB_ENABLE_GLAD CACHE)
-unset(VX_LIB_ENABLE_SOKOL CACHE)
-unset(VX_LIB_ENABLE_WGPU CACHE)
-unset(VX_LIB_ENABLE_NUKLEAR CACHE)
+#unset(VX_LIB_ENABLE_GLAD CACHE)
+#unset(VX_LIB_ENABLE_SOKOL CACHE)
+#unset(VX_LIB_ENABLE_WGPU CACHE)
+#unset(VX_LIB_ENABLE_NUKLEAR CACHE)

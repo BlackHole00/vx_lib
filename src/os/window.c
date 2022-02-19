@@ -3,10 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#include <glad/glad.h>
-#include <sokol_args.h>
-#include <sokol_gfx.h>
-
 #include "window_control.h"
 #include "input_helper.h"
 

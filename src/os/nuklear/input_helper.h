@@ -6,7 +6,7 @@
 #pragma once
 
 #include <vx_definitions.h>
-#ifdef VX_LIB_ENABLE_NUKLEAR
+#if defined(VX_LIB_ENABLE_NUKLEAR) && defined(VX_LIB_ENABLE_SOKOL)
 
 #include "../input_helper.h"
 

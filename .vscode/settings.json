@@ -2,6 +2,7 @@
     "files.associations": {
         "os.h": "c",
         "vx_definitions.h": "c",
-        "nuklear_glfw_sokol.h": "c"
+        "nuklear_glfw_sokol.h": "c",
+        "nuklear_args.h": "c"
     }
 }
